@@ -1,0 +1,29 @@
+<svg id="グループ_1" data-name="グループ 1" xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #333;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 150px;
+        fill: #fff;
+        text-anchor: middle;
+      }
+
+      .cls-2 {
+        font-family: RoGSanSrfStd-UB, "Ro GSan Serif Std";
+      }
+
+      .cls-3 {
+        font-family: "Arial Rounded MT Bold";
+      }
+    </style>
+  </defs>
+  <rect id="角丸長方形_1" data-name="角丸長方形 1" class="cls-1" x="25" y="25" width="450" height="450" rx="50" ry="50"/>
+  <text id="r" class="cls-2" x="80.496" y="146.279"><tspan x="80.496">r</tspan></text>
+  <text id="r-2" data-name="r" class="cls-2" transform="translate(419.497 352.477) rotate(180)"><tspan x="0">r</tspan></text>
+  <text id="r-3" data-name="r" class="cls-2" transform="translate(353.096 80.878) rotate(90)"><tspan x="0">r</tspan></text>
+  <text id="r-4" data-name="r" class="cls-2" transform="translate(146.897 419.878) rotate(-90)"><tspan x="0">r</tspan></text>
+  <text id="R-5" data-name="R" class="cls-3" x="247.529" y="302.762"><tspan x="247.529">R</tspan></text>
+</svg>

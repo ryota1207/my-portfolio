@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<head>
+  <!-- メタ -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- ページ設定 -->
+  <title>skills</title>
+  <meta name="description" content="【ページの説明文】" />
+
+  <!-- ファビコン -->
+  <link rel="icon" href="image/favicon/favicon.ico">
+  <link rel="icon" type="image/png" href="image/favicon/favicon.png">
+
+  <!-- 外部ファイルの読み込み -->
+
+  <style>
+    body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
+    /* ナビゲーション */
+    .header {position: fixed;width: 100%;height: 52px;padding: 0;margin: 0;background-color: #FFFFFF;}
+    .menu {list-style: none;position: absolute;width: 100%;height: 100vh;top: 0;margin-top: 52px;padding: 0 0 10px 0;clear: both;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;transform: scale(1, 0);transform-origin: top;background-color: #FFFFFF;user-select: none;border-left: 2px solid #333;margin-left: 37px;}
+    .menu-btn:checked ~ .menu {transform: scale(1, 1);transform-origin: top;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .menu a {text-decoration: none;font-weight: 500;letter-spacing: 2px;font-size: 16px;text-transform: capitalize;color: #333;opacity: 0;transition: 0.5s;}
+    .menu li {padding: 15px 0;margin: 0 54px;opacity: 0;transition: 0.5s;}
+    .menu-btn:checked ~ .menu a,.menu-btn:checked ~ .menu li {opacity: 1;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;}
+    .menu-btn {display: none;}
+    .menu-icon {display: inline-block;position: relative;cursor: pointer;padding: 24px 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);float: right;}
+    .navicon {background: #333;display: block;height: 3px;width: 26px;position: relative;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before,.navicon:after {content: "";display: block;height: 100%;width: 100%;position: absolute;background: #333;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before {top: 9px;}
+    .navicon:after {bottom: 9px;}
+    .menu-btn:checked ~ .menu-icon .navicon:before {transform: rotate(-45deg);}
+    .menu-btn:checked ~ .menu-icon .navicon:after {transform: rotate(45deg);}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {top: 0;}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {bottom: 0;}
+    .menu-btn:checked ~ .menu-icon .navicon {background: rgba(0, 0, 0, 0);transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navtext-container {width: 100%;height: 52px;position: absolute;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+    .navtext {position: absolute;color: #333;letter-spacing: 4px;font-size: 20px;padding: 24px 14px;color: #333;text-decoration: none;}
+    /* アイコン */
+    .icon {opacity: 0;position: fixed;transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2008s;}
+    .menu-btn:checked ~ .icon {opacity: 1;}
+
+    .contents{padding-top: 52px;margin: auto;width: 80vw;height: 100%;}
+
+
+/* デスクトップサイズ以上のスタイル */
+.container {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.column {
+  margin:0 10px;
+  flex: 1;
+  padding: 10px;
+}
+
+.skills-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 3px solid #333;
+  padding: 10px;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+}
+
+/* タブレットサイズのスタイル */
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .column {
+    flex-basis: 50%;
+  }
+}
+
+/* スマートフォンサイズのスタイル */
+@media (max-width: 480px) {
+    .container {
+    margin-bottom: 0;
+  }
+  .column {
+    flex-basis: 100%;
+  }
+}
+
+
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <a href="index.html"><div class="navtext" style="user-select: none;">r.portfolio</div></a>
+    <ul class="menu">
+      <li class="top"><a href="index.html">home</a></li>
+      <li><a href="skills.html">skills</a></li>
+      <li><a href="portfolio.html">portfolio</a></li>
+      <li><a href="blog.html">blog</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+    <a href="https://github.com/ryota1207" target="_blank" class="icon" style="bottom: 20px;right: 30px;"><img src="image/icon/github-mark.svg" width="35" height="35" alt=""></a>
+    <a href="https://twitter.com/ryota__1207" target="_blank" class="icon" style="bottom: 20px;right: 80px;"><img src="image/icon/twitter.svg" width="35" height="35" alt=""></a>
+
+
+  </header>
+
+<div class="contents">
+  <h2 style="text-align: center; margin-top: 60px;">skills</h2>
+  <div class="container">
+    <div class="column">
+      <h4 style="text-align: center;">| server |</h4>
+      <ul class="skills-list">
+        <li>Linux基礎</li>
+        <li>インターネット基礎</li>
+        <li>Cent7</li>
+        <li>AlmaLinux8</li>
+        <li>Apache</li>
+        <li>Postfix</li>
+        <!-- 他のスキルを追加 -->
+      </ul>
+    </div>
+    <div class="column">
+      <h4 style="text-align: center;">| design |</h4>
+      <ul class="skills-list">
+        <li>Adobe Photoshop</li>
+        <li>Adobe Illustrator</li>
+        <li>Adobe After Effects</li>
+        <li>Adobe Premiere</li>
+        <!-- 他のスキルを追加 -->
+      </ul>
+    </div>
+    <div class="column">
+      <h4 style="text-align: center;">| Other |</h4>
+      <ul class="skills-list">
+        <li>PHP</li>
+        <li>Python</li>
+        <li>HTML&CSS</li>
+        <li>JavaScript</li>
+        <li>ShellScript</li>
+        <!-- 他のスキルを追加 -->
+      </ul>
+    </div>
+  </div>
+
+  <h2 style="text-align: center; margin-top: 20px;">資格</h2>
+  <div class="container">
+    <div class="column">
+      <h4 style="text-align: center;">| design |</h4>
+      <ul class="skills-list">
+        <li>Photoshop クリエイター能力認定試験 スタンダード</li>
+        <li>Illustrator クリエイター能力認定試験 スタンダード</li>
+        <li>文部科学省後援 色彩検定 3級</li>
+        <li>Webクリエイター能力認定試験/html5 スタンダード</li>
+        <!-- 他のスキルを追加 -->
+      </ul>
+    </div>
+    <div class="column">
+      <h4 style="text-align: center;">| server |</h4>
+      <ul class="skills-list">
+        <li>AWS Certified Cloud Practitioner</li>
+        <!-- 他のスキルを追加 -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
