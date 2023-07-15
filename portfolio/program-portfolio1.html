@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- メタ -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- ページ設定 -->
+  <title>portfolio</title>
+  <meta name="description" content="デザインとエンジニアリングの融合を追求する私のポートフォリオサイトです。" />
+
+  <!-- ファビコン -->
+  <link rel="icon" href="../image/favicon/favicon.ico">
+  <link rel="icon" type="image/png" href="../image/favicon/favicon.png">
+
+  <!-- 外部ファイルの読み込み -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76RM8LHR7D"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-76RM8LHR7D');
+  </script>
+
+  <style>
+    body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
+    /* ナビゲーション */
+    .header {position: fixed;width: 100%;height: 52px;padding: 0;margin: 0;background-color: #FFFFFF;}
+    .menu {list-style: none;position: absolute;width: 100%;height: 100vh;top: 0;margin-top: 52px;padding: 0 0 10px 0;clear: both;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;transform: scale(1, 0);transform-origin: top;background-color: #FFFFFF;user-select: none;border-left: 2px solid #333;margin-left: 36px;}
+    .menu-btn:checked ~ .menu {transform: scale(1, 1);transform-origin: top;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .menu a {text-decoration: none;font-weight: 500;letter-spacing: 2px;font-size: 16px;text-transform: capitalize;color: #333;opacity: 0;transition: 0.5s;}
+    .menu li {padding: 15px 0;margin: 0 54px;opacity: 0;transition: 0.5s;}
+    .menu-btn:checked ~ .menu a,.menu-btn:checked ~ .menu li {opacity: 1;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;}
+    .menu-btn {display: none;}
+    .menu-icon {display: inline-block;position: relative;cursor: pointer;padding: 24px 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);float: right;}
+    .navicon {background: #333;display: block;height: 3px;width: 26px;position: relative;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before,.navicon:after {content: "";display: block;height: 100%;width: 100%;position: absolute;background: #333;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before {top: 9px;}
+    .navicon:after {bottom: 9px;}
+    .menu-btn:checked ~ .menu-icon .navicon:before {transform: rotate(-45deg);}
+    .menu-btn:checked ~ .menu-icon .navicon:after {transform: rotate(45deg);}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {top: 0;}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {bottom: 0;}
+    .menu-btn:checked ~ .menu-icon .navicon {background: rgba(0, 0, 0, 0);transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navtext-container {width: 100%;height: 52px;position: absolute;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+    .navtext {position: absolute;color: #333;letter-spacing: 4px;font-size: 20px;padding: 24px 14px;color: #333;text-decoration: none;}
+    /* アイコン */
+    .icon {opacity: 0;position: fixed;transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2008s;}
+    .menu-btn:checked ~ .icon {opacity: 1;}
+
+    .contents{padding-top: 52px;margin: auto;width: 80vw;height: 100%;}
+
+    .list-ul{padding: 0;}
+    .list{list-style: none;}
+
+    table {border-collapse: collapse;width: 100%;}
+    th, td {border: 1px solid gray;padding: 8px;text-align: left;}
+    th {background-color: #f2f2f2;}
+
+
+
+
+
+
+
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <a href="../index.html"><div class="navtext" style="user-select: none;">r.portfolio</div></a>
+    <ul class="menu">
+      <li class="top"><a href="../index.html">home</a></li>
+      <li><a href="../skills.html">skills</a></li>
+      <li><a href="../portfolio.html">portfolio</a></li>
+      <li><a href="../blog.html">blog</a></li>
+      <li><a href="../contact.html">contact</a></li>
+    </ul>
+    <a href="https://github.com/ryota1207" target="_blank" class="icon" style="bottom: 20px;right: 30px;"><img src="../image/icon/github-mark.svg" width="35" height="35" alt=""></a>
+    <a href="https://twitter.com/ryota__1207" target="_blank" class="icon" style="bottom: 20px;right: 80px;"><img src="../image/icon/twitter.svg" width="35" height="35" alt=""></a>
+
+
+  </header>
+  <div class="contents">
+    <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">TIME API</h2>
+    <img src="../image/portfolio/program-portfolio1-1.png" style="width: 100%;">
+
+    <h3>■説明</h3>
+
+    <ul class="list-ul">
+      <li class="list">
+        <p>「TIME API」は世界都市の現在時刻を返答するAPIです。現在は世界21都市に対応しております。</p>
+        <p>レスポンスはJSON形式で返答致します。</p>
+      </li>
+    </ul>
+
+
+    <h3>■構成</h3>
+
+    <ul class="list-ul" style="margin-bottom: 50px;">
+      <li class="list">
+        <h4>| 概要 |</h4>
+        <p>世界都市の現在時刻を返答するAPI</p>
+        <h4>| 機能 |</h4>
+        <p>世界都市の現在時刻を返答するAPI<br>├ 使用制限 : なし<br>├ 回数制限: なし<br>├ 鍵の使用 : 不要</p>
+        <h4>| API対応都市 |</h4>
+        <ul>
+          <li>ロンドン</li>
+          <li>ニューヨーク</li>
+          <li>東京</li>
+          <li>パリ</li>
+          <li>シンガポール</li>
+          <li>アムステルダム</li>
+          <li>ソウル</li>
+          <li>ベルリン</li>
+          <li>メルボルン</li>
+          <li>上海</li>
+          <li>ドバイ</li>
+          <li>マドリード</li>
+          <li>シドニー</li>
+          <li>コペンハーゲン</li>
+          <li>ウィーン</li>
+          <li>ロサンゼルス</li>
+          <li>北京</li>
+          <li>チューリッヒ</li>
+          <li>ストックホルム</li>
+          <li>バルセロナ</li>
+          <li>台北</li>
+        </ul>
+      </li>
+    </ul>
+
+
+    <h3>■使用方法</h3>
+
+    <ul class="list-ul">
+      <li class="list">
+        <h4>1.対象URLにリクエストする</h4>
+        <p>※クエリパラメータにて利用可能な都市名を入力ください</p>
+        <pre style="background-color: #333; margin-bottom: 50px;">
+          <code style="color: #FFFFFF;">
+          #対象URL
+          http://api.web-next.cloud/time-api/v1/?city=都市名
+          ※クエリパラメータにて都市名を入力ください
+          ※使用できるパラメーターは下記一覧をご確認よろしくお願い致します。
+
+          #例 東京の場合
+          http://api.web-next.cloud/time-api/v1/?city=tokyo</code>
+        </pre>
+        <h4>2.JSONデータを受け取る</h4>
+        <pre style="background-color: #333; margin-bottom: 50px;">
+          <code style="color: #FFFFFF;">
+          #返答されるJSONデータ
+          { "timezone": "都市名",
+            "fulldate": "yyyy-mm-dd H:i:s",
+            "year": "yyyy",
+            "month": "mm",
+            "day": "dd",
+            "hours": "H",
+            "minute ": "i",
+            "second": "s"
+          }
+
+          #例 東京の場合
+          { "timezone": "tokyo",
+            "fulldate": "2023-03-20 15:17:22",
+            "year": "2023",
+            "month": "03",
+            "day": "20",
+            "hours": "15",
+            "minute ": "17",
+            "second": "22"
+          }</code>
+        </pre>
+        <h4 style="margin-bottom: 50px;">3.プログラムに使用する</h4>
+    </ul>
+
+
+    <h3>■パラメーター一覧</h3>
+    <img src="../image/portfolio/program-portfolio1-2.png" style="width: 100%;">
+
+    <h4>| ヨーロッパ |</h4>
+
+    <table style="border-color: gray;margin: 0 0 1.8em;"><tbody><tr><td>国</td><td>都市名</td><td>パラメーター</td><td>URL</td></tr><tr><td>イギリス(GB)</td><td>ロンドン</td><td>london</td><td>http://api.web-next.cloud/time-api/v1/?city=london</td></tr><tr><td>フランス</td><td>パリ</td><td>paris</td><td>http://api.web-next.cloud/time-api/v1/?city=paris</td></tr><tr><td>オランダ</td><td>アムステルダム</td><td>amsterdam</td><td>http://api.web-next.cloud/time-api/v1/?city=amsterdam</td></tr><tr><td>ドイツ</td><td>ベルリン</td><td>berlin</td><td>http://api.web-next.cloud/time-api/v1/?city=berlin</td></tr><tr><td>スペイン</td><td>マドリード</td><td>madrid</td><td>http://api.web-next.cloud/time-api/v1/?city=madrid</td></tr><tr><td>デンマーク</td><td>コペンハーゲン</td><td>copenhagen</td><td>http://api.web-next.cloud/time-api/v1/?city=copenhagen</td></tr><tr><td>オーストリア</td><td>ウィーン</td><td>vienna</td><td>http://api.web-next.cloud/time-api/v1/?city=vienna</td></tr><tr><td>スイス</td><td>チューリッヒ</td><td>zurich</td><td>http://api.web-next.cloud/time-api/v1/?city=zurich</td></tr><tr><td>スウェーデン</td><td>ストックホルム</td><td>stockholm</td><td>http://api.web-next.cloud/time-api/v1/?city=stockholm</td></tr><tr><td>スペイン</td><td>バルセロナ</td><td>barcelona</td><td>http://api.web-next.cloud/time-api/v1/?city=barcelona</td></tr></tbody></table>
+
+    <h4>| 北アメリカ |</h4>
+    <table><tbody><tr><td>国</td><td>都市名</td><td>パラメーター</td><td>URL</td></tr><tr><td>アメリカ</td><td>ニューヨーク</td><td>new_york</td><td>http://api.web-next.cloud/time-api/v1/?city=new_york</td></tr><tr><td>アメリカ</td><td>ロサンゼルス</td><td>los_angeles</td><td>http://api.web-next.cloud/time-api/v1/?city=los_angeles</td></tr></tbody></table>
+
+    <h4>| アジア |</h4>
+    <table><tbody><tr><td>国</td><td>都市名</td><td>パラメーター</td><td>URL</td></tr><tr><td>日本</td><td>東京</td><td>tokyo</td><td>http://api.web-next.cloud/time-api/v1/?city=tokyo</td></tr><tr><td>台湾</td><td>台北</td><td>taipei</td><td>http://api.web-next.cloud/time-api/v1/?city=taipei</td></tr><tr><td>シンガポール</td><td>シンガポール</td><td>singapore</td><td>http://api.web-next.cloud/time-api/v1/?city=singapore</td></tr><tr><td>韓国</td><td>ソウル</td><td>seoul</td><td>http://api.web-next.cloud/time-api/v1/?city=seoul</td></tr><tr><td>中国</td><td>上海</td><td>shanghai</td><td>http://api.web-next.cloud/time-api/v1/?city=shanghai</td></tr><tr><td>中国</td><td>北京</td><td>beijing</td><td>http://api.web-next.cloud/time-api/v1/?city=beijing</td></tr><tr><td>アラブ首長国連邦</td><td>ドバイ</td><td>dubai</td><td>http://api.web-next.cloud/time-api/v1/?city=dubai</td></tr></tbody></table>
+
+    <h4>| オセアニア |</h4>
+    <table style="margin-bottom: 50px;"><tbody><tr><td>国</td><td>都市名</td><td>パラメーター</td><td>URL</td></tr><tr><td>オーストラリア</td><td>メルボルン</td><td>melbourne</td><td>http://api.web-next.cloud/time-api/v1/?city=melbourne</td></tr><tr><td>オーストラリア</td><td>シドニー</td><td>sydney</td><td>http://api.web-next.cloud/time-api/v1/?city=sydney</td></tr></tbody></table>
+
+    <p style="text-align: center;"><a href="../portfolio.html" style="color:#333;">戻る</a></p>
+
+
+  </div>
+
+
+
+</body>
+</html>
