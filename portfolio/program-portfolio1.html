@@ -93,94 +93,87 @@
     <img src="../image/portfolio/program-portfolio1-1.png" style="width: 100%;">
 
     <h3>■説明</h3>
-
-    <ul class="list-ul">
-      <li class="list">
-        <p>「TIME API」は世界都市の現在時刻を返答するAPIです。現在は世界21都市に対応しております。</p>
-        <p>レスポンスはJSON形式で返答致します。</p>
-      </li>
-    </ul>
+    <p>「TIME API」は世界都市の現在時刻を返答するAPIです。現在は世界21都市に対応しております。</p>
+    <p>レスポンスはJSON形式で返答致します。</p>
 
 
     <h3>■構成</h3>
-
-    <ul class="list-ul" style="margin-bottom: 50px;">
-      <li class="list">
-        <h4>| 概要 |</h4>
-        <p>世界都市の現在時刻を返答するAPI</p>
-        <h4>| 機能 |</h4>
-        <p>世界都市の現在時刻を返答するAPI<br>├ 使用制限 : なし<br>├ 回数制限: なし<br>├ 鍵の使用 : 不要</p>
-        <h4>| API対応都市 |</h4>
-        <ul>
-          <li>ロンドン</li>
-          <li>ニューヨーク</li>
-          <li>東京</li>
-          <li>パリ</li>
-          <li>シンガポール</li>
-          <li>アムステルダム</li>
-          <li>ソウル</li>
-          <li>ベルリン</li>
-          <li>メルボルン</li>
-          <li>上海</li>
-          <li>ドバイ</li>
-          <li>マドリード</li>
-          <li>シドニー</li>
-          <li>コペンハーゲン</li>
-          <li>ウィーン</li>
-          <li>ロサンゼルス</li>
-          <li>北京</li>
-          <li>チューリッヒ</li>
-          <li>ストックホルム</li>
-          <li>バルセロナ</li>
-          <li>台北</li>
-        </ul>
-      </li>
+    <h4>| 概要 |</h4>
+    <p>世界都市の現在時刻を返答するAPI</p>
+    
+    <h4>| バージョン |</h4>
+    <p>V1</p>
+    
+    <h4>| 機能 |</h4>
+    <p>世界都市の現在時刻を返答するAPI<br>├ 使用制限 : なし<br>├ 回数制限: なし<br>├ 鍵の使用 : 不要</p>
+        
+    <h4>| API対応都市 |</h4>
+    <ul>
+      <li>ロンドン</li>
+      <li>ニューヨーク</li>
+      <li>東京</li>
+      <li>パリ</li>
+      <li>シンガポール</li>
+      <li>アムステルダム</li>
+      <li>ソウル</li>
+      <li>ベルリン</li>
+      <li>メルボルン</li>
+      <li>上海</li>
+      <li>ドバイ</li>
+      <li>マドリード</li>
+      <li>シドニー</li>
+      <li>コペンハーゲン</li>
+      <li>ウィーン</li>
+      <li>ロサンゼルス</li>
+      <li>北京</li>
+      <li>チューリッヒ</li>
+      <li>ストックホルム</li>
+      <li>バルセロナ</li>
+      <li>台北</li>
     </ul>
 
 
     <h3>■使用方法</h3>
 
-    <ul class="list-ul">
-      <li class="list">
-        <h4>1.対象URLにリクエストする</h4>
-        <p>※クエリパラメータにて利用可能な都市名を入力ください</p>
-        <pre style="background-color: #333; margin-bottom: 50px;overflow-x: auto;">
-          <code style="color: #FFFFFF;">
-          #対象URL
-          http://api.web-next.cloud/time-api/v1/?city=都市名
-          ※クエリパラメータにて都市名を入力ください
-          ※使用できるパラメーターは下記一覧をご確認よろしくお願い致します。
+    <h4>1.対象URLにリクエストする</h4>
+    <p>※クエリパラメータにて利用可能な都市名を入力ください</p>
+    <pre style="background-color: #333; margin-bottom: 50px;overflow-x: auto;">
+      <code style="color: #FFFFFF;">
+      #対象URL
+      http://api.web-next.cloud/time-api/v1/?city=都市名
+      ※クエリパラメータにて都市名を入力ください
+      ※使用できるパラメーターは下記一覧をご確認よろしくお願い致します。
 
-          #例 東京の場合
-          http://api.web-next.cloud/time-api/v1/?city=tokyo</code>
-        </pre>
-        <h4>2.JSONデータを受け取る</h4>
-        <pre style="background-color: #333; margin-bottom: 50px;overflow-x: auto;">
-          <code style="color: #FFFFFF;">
-          #返答されるJSONデータ
-          { "timezone": "都市名",
-            "fulldate": "yyyy-mm-dd H:i:s",
-            "year": "yyyy",
-            "month": "mm",
-            "day": "dd",
-            "hours": "H",
-            "minute ": "i",
-            "second": "s"
-          }
+      #例 東京の場合
+      http://api.web-next.cloud/time-api/v1/?city=tokyo</code>
+    </pre>
+    
+    <h4>2.JSONデータを受け取る</h4>
+    <pre style="background-color: #333; margin-bottom: 50px;overflow-x: auto;">
+      <code style="color: #FFFFFF;">
+      #返答されるJSONデータ
+      { "timezone": "都市名",
+        "fulldate": "yyyy-mm-dd H:i:s",
+        "year": "yyyy",
+        "month": "mm",
+        "day": "dd",
+        "hours": "H",
+        "minute ": "i",
+        "second": "s"
+      }
 
-          #例 東京の場合
-          { "timezone": "tokyo",
-            "fulldate": "2023-03-20 15:17:22",
-            "year": "2023",
-            "month": "03",
-            "day": "20",
-            "hours": "15",
-            "minute ": "17",
-            "second": "22"
-          }</code>
-        </pre>
-        <h4 style="margin-bottom: 50px;">3.プログラムに使用する</h4>
-    </ul>
+      #例 東京の場合
+      { "timezone": "tokyo",
+        "fulldate": "2023-03-20 15:17:22",
+        "year": "2023",
+        "month": "03",
+        "day": "20",
+        "hours": "15",
+        "minute ": "17",
+        "second": "22"
+      }</code>
+    </pre>
+    <h4 style="margin-bottom: 50px;">3.プログラムに使用する</h4>
 
 
     <h3>■パラメーター一覧</h3>

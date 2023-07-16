@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- メタ -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- ページ設定 -->
+  <title>portfolio</title>
+  <meta name="description" content="デザインとエンジニアリングの融合を追求する私のポートフォリオサイトです。" />
+
+  <!-- ファビコン -->
+  <link rel="icon" href="../image/favicon/favicon.ico">
+  <link rel="icon" type="image/png" href="../image/favicon/favicon.png">
+
+  <!-- 外部ファイルの読み込み -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76RM8LHR7D"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-76RM8LHR7D');
+  </script>
+
+  <style>
+    body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
+    /* ナビゲーション */
+    .header {position: fixed;width: 100%;height: 52px;padding: 0;margin: 0;background-color: #FFFFFF;}
+    .menu {list-style: none;position: absolute;width: 100%;height: 100vh;top: 0;margin-top: 52px;padding: 0 0 10px 0;clear: both;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;transform: scale(1, 0);transform-origin: top;background-color: #FFFFFF;user-select: none;border-left: 2px solid #333;margin-left: 36px;}
+    .menu-btn:checked ~ .menu {transform: scale(1, 1);transform-origin: top;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .menu a {text-decoration: none;font-weight: 500;letter-spacing: 2px;font-size: 16px;text-transform: capitalize;color: #333;opacity: 0;transition: 0.5s;}
+    .menu li {padding: 15px 0;margin: 0 54px;opacity: 0;transition: 0.5s;}
+    .menu-btn:checked ~ .menu a,.menu-btn:checked ~ .menu li {opacity: 1;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;}
+    .menu-btn {display: none;}
+    .menu-icon {display: inline-block;position: relative;cursor: pointer;padding: 24px 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);float: right;}
+    .navicon {background: #333;display: block;height: 3px;width: 26px;position: relative;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before,.navicon:after {content: "";display: block;height: 100%;width: 100%;position: absolute;background: #333;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before {top: 9px;}
+    .navicon:after {bottom: 9px;}
+    .menu-btn:checked ~ .menu-icon .navicon:before {transform: rotate(-45deg);}
+    .menu-btn:checked ~ .menu-icon .navicon:after {transform: rotate(45deg);}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {top: 0;}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {bottom: 0;}
+    .menu-btn:checked ~ .menu-icon .navicon {background: rgba(0, 0, 0, 0);transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navtext-container {width: 100%;height: 52px;position: absolute;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+    .navtext {position: absolute;color: #333;letter-spacing: 4px;font-size: 20px;padding: 24px 14px;color: #333;text-decoration: none;}
+    /* アイコン */
+    .icon {opacity: 0;position: fixed;transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2008s;}
+    .menu-btn:checked ~ .icon {opacity: 1;}
+
+    .contents{padding-top: 52px;margin: auto;width: 80vw;height: 100%;}
+
+    .list-ul{padding: 0;}
+    .list{list-style: none;}
+
+    table {border-collapse: collapse;width: 100%;}
+    th, td {border: 1px solid gray;padding: 8px;text-align: left;}
+    th {background-color: #f2f2f2;}
+
+
+
+
+
+
+
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <a href="../index.html"><div class="navtext" style="user-select: none;">r.portfolio</div></a>
+    <ul class="menu">
+      <li class="top"><a href="../index.html">home</a></li>
+      <li><a href="../skills.html">skills</a></li>
+      <li><a href="../portfolio.html">portfolio</a></li>
+      <li><a href="../blog.html">blog</a></li>
+      <li><a href="../contact.html">contact</a></li>
+    </ul>
+    <a href="https://github.com/ryota1207" target="_blank" class="icon" style="bottom: 20px;right: 30px;"><img src="../image/icon/github-mark.svg" width="35" height="35" alt=""></a>
+    <a href="https://twitter.com/ryota__1207" target="_blank" class="icon" style="bottom: 20px;right: 80px;"><img src="../image/icon/twitter.svg" width="35" height="35" alt=""></a>
+
+
+  </header>
+  <div class="contents">
+    <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">DIG-LIST</h2>
+    <img src="../image/portfolio/program-portfolio1-1.png" style="width: 100%;">
+
+    <h3>■説明</h3>
+    <p>「DIG-LIST」はシェルスクリプトで構成されたDNSレコード一括検索スクリプトとなります。</p>
+    <p style="margin-bottom: 50px;">TXTファイ等を引数にDNSレコード一括検索が実行できます。</p>
+
+
+    <h3>■構成</h3>
+    <h4>| 概要 |</h4>
+    <p>DNSレコード一括検索スクリプト</p>
+    <h4>| バージョン |</h4>
+    <p>version 1.0</p>
+    <h4>| 機能 |</h4>
+    <ul>
+      <li>Aレコード一括検索</li>
+      <li>NSレコード一括検索</li>
+      <li>MXレコード一括検索</li>
+      <li>TXTレコード一括検索</li>
+      <li>全レコード一括検索</li>
+      <li>逆引きレコード一括検索</li>
+    </ul>
+    <h4>| 使用要件 |</h4>
+    <ul style="margin-bottom: 50px;">
+      <li>bash実行環境</li>
+      <li>digコマンド実行環境</li>
+    </ul>
+
+    <h4>| ファイル構成 |</h4>
+    <pre style="background-color: #333; margin-bottom: 50px;overflow-x: auto;">
+     <code style="color: #FFFFFF;">
+      DIG-LIST.zip
+      │
+      └─dig-list.sh
+     </code>
+    </pre>
+
+    <h3>■使用方法</h3>
+    <h4>1.プログラムをダウンロード</h4>
+    <p style="margin-bottom: 30px;">下記よりプログラムをダウンロードします</p>
+
+    <h4>2.実行環境に設置する</h4>
+    <p>任意の場所に設置可能です。</p>
+    <p style="margin-bottom: 30px;">※bashが実行できるパスに設置ください</p>
+
+    <h4>3.検索対象リストファイルを作成する</h4>
+    <p>ドメインリストまたはIPリストを任意の名前で作成ください。任意の場所に設置可能です。</p>
+    <p>リストファイルはドメイン単位またはIP単位で改行ください。</p>
+    <pre style="background-color: #333;overflow-x: auto;">
+     <code style="color: #FFFFFF;">
+      #例
+      ファイル名 : list.txt
+      内容
+      example1.com
+      example2.com
+      example3.com
+      example4.com
+      example5.com
+      example6.com
+      example7.com
+      example8.com
+      example9.com
+      example10.com
+     </code>
+    </pre>
+    <p style="margin-bottom: 30px;">※任意のファイル名作成可能です。</p>
+
+    <h4>4.スクリプトの実行</h4>
+    <p>手順[3]にて、作成したファイルを引数にシェルを実行します。</p>
+    <pre style="background-color: #333;overflow-x: auto;">
+     <code style="color: #FFFFFF;">
+      #例 同一階層にリストファイルを作成した場合
+      sh dig-list.sh リスト名
+      
+      #例 異なる階層にリストファイルを作成した場合(対象ファイルのパスをご指定下さい)
+      sh /homw/goge/script/dig-list.sh /homw/goge/list/リスト名
+     </code>
+    </pre>
+    <p>※ファイルのパスにあわせてご変更ください</p>
+    <p style="margin-bottom: 30px;">※絶対パス、相対パスにて指定が可能です。</p>
+
+    <h4>5.オプションの選択</h4>
+    <p>スクリプトの実行後、検索対象のレコードタイプを選択ください。</p>
+    <pre style="background-color: #333;overflow-x: auto;margin-bottom: 30px;">
+     <code style="color: #FFFFFF;">
+      -------------------------------------------------
+      |      検索対象レコードタイプを入力下さい        |
+      -------------------------------------------------
+
+      1) Aレコード       3) MXレコード      5) 全てのレコード
+      2) NSレコード      4) TXTレコード     6) 逆引き
+      #? 
+     </code>
+    </pre>
+
+    <h4>6.結果確認</h4>
+    <pre style="background-color: #333;overflow-x: auto;margin-bottom: 30px;">
+     <code style="color: #FFFFFF;">
+      #例 実行結果
+
+      -------------------------------------------------
+
+      対象ドメイン example1.com の MXレコード 検索を実行します
+
+      example1.com. 10 mail.example1.com.
+
+      -------------------------------------------------
+
+      対象ドメイン example2.com の MXレコード 検索を実行します
+
+      example1.com. 5 mail.example2.com.
+
+      -------------------------------------------------
+
+      対象ドメイン example3.com の MXレコード 検索を実行します
+
+      example1.com. 10 mail.example3.com.
+
+      -------------------------------------------------
+
+      etc........
+     </code>
+    </pre>
+
+    <p style="text-align: center;"><a href="../portfolio.html" style="color:#333;">戻る</a></p>
+
+
+  </div>
+
+
+
+</body>
+</html>
