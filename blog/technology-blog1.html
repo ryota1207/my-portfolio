@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- メタ -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- ページ設定 -->
+  <title>blog</title>
+  <meta name="description" content="デザインとエンジニアリングの融合を追求する私のポートフォリオサイトです。" />
+
+  <!-- ファビコン -->
+  <link rel="icon" href="../image/favicon/favicon.ico">
+  <link rel="icon" type="image/png" href="../image/favicon/favicon.png">
+
+  <!-- 外部ファイルの読み込み -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76RM8LHR7D"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-76RM8LHR7D');
+  </script>
+
+  <style>
+    body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
+    /* ナビゲーション */
+    .header {position: fixed;width: 100%;height: 52px;padding: 0;margin: 0;background-color: #FFFFFF;}
+    .menu {list-style: none;position: absolute;width: 100%;height: 100vh;top: 0;margin-top: 52px;padding: 0 0 10px 0;clear: both;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;transform: scale(1, 0);transform-origin: top;background-color: #FFFFFF;user-select: none;border-left: 2px solid #333;margin-left: 36px;}
+    .menu-btn:checked ~ .menu {transform: scale(1, 1);transform-origin: top;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .menu a {text-decoration: none;font-weight: 500;letter-spacing: 2px;font-size: 16px;text-transform: capitalize;color: #333;opacity: 0;transition: 0.5s;}
+    .menu li {padding: 15px 0;margin: 0 54px;opacity: 0;transition: 0.5s;}
+    .menu-btn:checked ~ .menu a,.menu-btn:checked ~ .menu li {opacity: 1;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;}
+    .menu-btn {display: none;}
+    .menu-icon {display: inline-block;position: relative;cursor: pointer;padding: 24px 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);float: right;}
+    .navicon {background: #333;display: block;height: 3px;width: 26px;position: relative;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before,.navicon:after {content: "";display: block;height: 100%;width: 100%;position: absolute;background: #333;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before {top: 9px;}
+    .navicon:after {bottom: 9px;}
+    .menu-btn:checked ~ .menu-icon .navicon:before {transform: rotate(-45deg);}
+    .menu-btn:checked ~ .menu-icon .navicon:after {transform: rotate(45deg);}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {top: 0;}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {bottom: 0;}
+    .menu-btn:checked ~ .menu-icon .navicon {background: rgba(0, 0, 0, 0);transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navtext-container {width: 100%;height: 52px;position: absolute;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+    .navtext {position: absolute;color: #333;letter-spacing: 4px;font-size: 20px;padding: 24px 14px;color: #333;text-decoration: none;}
+    /* アイコン */
+    .icon {opacity: 0;position: fixed;transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2008s;}
+    .menu-btn:checked ~ .icon {opacity: 1;}
+
+    .contents{padding-top: 52px;margin: auto;width: 80vw;height: 100%;}
+
+    .list-ul{padding: 0;}
+    .list{list-style: none;}
+
+    table {border-collapse: collapse;width: 100%;}
+    th, td {border: 1px solid gray;padding: 8px;text-align: left;}
+    th {background-color: #f2f2f2;}
+
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <a href="../index.html"><div class="navtext" style="user-select: none;">r.portfolio</div></a>
+    <ul class="menu">
+      <li class="top"><a href="../index.html">home</a></li>
+      <li><a href="../skills.html">skills</a></li>
+      <li><a href="../portfolio.html">portfolio</a></li>
+      <li><a href="../blog.html">blog</a></li>
+      <li><a href="../contact.html">contact</a></li>
+      <a href="https://github.com/ryota1207" target="_blank" class="icon" style="bottom: 80px;right: 70px;"><img src="../image/icon/github-mark.svg" width="35" height="35" alt=""></a>
+      <a href="https://twitter.com/ryota__1207" target="_blank" class="icon" style="bottom: 80px;right: 130px;"><img src="../image/icon/twitter.svg" width="35" height="35" alt=""></a>
+    </ul>
+
+
+
+  </header>
+  <div class="contents">
+    <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">WordPressバージョンチェックをスクリプトを作成してみた!!</h2>
+    <img src="../image/blog/shell_bash.jpg  " style="width: 100%;">
+
+    <h3>■はじめに</h3>
+    <p>お久しぶりです。r.portfolioの中の人「 r 」でございます。</p>
+    <p>世の中には様々なCMSが存在しますが、最も有名なCMSは「WordPress」ではないでしょうか？</p>
+    <p>私はサーバーエンジニアの業務の一環として、お客様のWeb環境を頻繁に目にしています。</p>
+    <p>その中の体感として、約8割強のお客様が「WordPress」を利用しWeb構築を行なっているように感じます。</p>
+    <p>「WordPress」はOSSとして開発、公開が行われており様々なバージョンが存在します。</p>
+    <p>最新の公開バージョン取得したいと模索していたところ公式より公開されている便利なAPIを見つけました!!</p>
+    <p style="margin-bottom: 40px;">今回は上記APIを活用し簡易的にバージョンチェックスクリプトを作成する方法を解説致します!!</p>
+
+    <h3>■使用するAPI</h3>
+    <p>今回使用するAPIは公式より公開されている「WordPress.org API」を使用致します。</p>
+    <p>「WordPress.org API」の中の「Version Check」APIを使用し最新バージョンを取得します。</p>
+    <p>その他にも「PHPバージョン」や「mysqlバージョン」「ダウンロードリンク」等もあわせて取得しプログラムに埋め込みます。</p>
+    <ul>
+      <li>最新バージョン</li>
+      <li>PHPバージョン</li>
+      <li>mysqlバージョン</li>
+      <li>ダウンロードリンク</li>
+    </ul>
+    <p>その他のAPI詳細については下記サイトよりご確認よろしくお願いいたします。</p>
+    <a href="https://codex.wordpress.org/WordPress.org_API" style="color:#333;" target=”_blank”><p style="margin-bottom: 40px;">&ltAPI公式サイト&gt</a></p>
+
+    <h3>■シェルの構成</h3>
+    <h4>| 概要 |</h4>
+    <p>今回作成するシェルの流れは以下のようになっております。</p>
+    <ol>
+      <li>APIから情報を取得し、変数に格納</li>
+      <li>スクリプトにて保持している現在のバージョン情報を変数に格納</li>
+      <li>if条件文を使って、新しいバージョンと現在のバージョンを比較</li>
+      <li>差分がある場合、メール処理を行い通知</li>
+    </ol>
+
+     <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">ディレクトリ
+│
+├ チェックスクリプト
+└─バージョン格納用テキストファイル</code></pre>
+
+    <h4>| APIから情報を取得し変数に格納 |</h4>
+    <p>APIからの情報取得はcurlを使用します。またhttpsを使用する為、「-s」オプションを使用します。</p>
+    <p>下記のコードにて取得したAPIバージョンをnewversionとして変数に格納します。</p>
+    <p>curlではAPIのすべての情報を取得してしまう為、grepやcut、head等を使用し必要な情報のみを抽出します。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+
+#APIからCMSバージョンを取得し変数に格納
+newversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"current":"[^"]+' | cut -d'"' -f4 | head -1)
+</code></pre>
+
+    <p>上記同様に「PHPバージョン」「mysqlバージョン」「ダウンロードリンク」をAPIより取得し変数に格納します。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+
+#APIからPHPバージョンを取得し変数に格納
+phpversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"php_version":"[^"]+' | cut -d'"' -f4 | head -1)
+
+##APIからmysqlバージョンを取得し変数に格納
+mysqlversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"mysql_version":"[^"]+' | cut -d'"' -f4 | head -1)
+
+#APIからダウンロードリンクを取得し変数に格納
+downloadlink=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"download":"[^"]+' | cut -d'"' -f4 | head -1)
+</code></pre>
+
+    <h4>| スクリプトにて保持している現在のバージョン情報を変数に格納 |</h4>
+    <h4>| 新しいバージョンと現在のバージョンを比較 |</h4>
+    <h4>| 差分がある場合メール処理を行い通知 |</h4>
+
+    <p style="text-align: center;"><a href="../blog.html" style="color:#333;">戻る</a></p>
+
+
+  </div>
+
+
+
+</body>
+</html>
