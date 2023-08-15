@@ -26,6 +26,7 @@
   gtag('config', 'G-76RM8LHR7D');
   </script>
 
+
   <style>
     body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
     /* ナビゲーション */
@@ -62,6 +63,79 @@
     th {background-color: #f2f2f2;}
 
   </style>
+
+  <script>
+    const commandList = [
+    "alias", "ar", "awk", "base64", "adduser", "basename", "bg", "cd", "case", "cat", "chage", "chmod", "chown", "chroot", "deluser", "chfn", "last", "finger", "route","ftp", "ssh", "which", "type", "whatisfind", "aproposcal", "cal", "history", "less",
+    "chsh", "colrm", "comm", "compgen", "complete", "compopt", "convert", "cp", "cpio", "crontab", "csplit",
+    "curl", "cut", "dig","date", "dd", "declare", "df", "diff", "diff3", "dircolors", "dirname", "du", "echo",
+    "env", "exec", "expand", "export", "expr", "factor", "fg", "find", "fmt", "fold", "for", "free", "getopt",
+    "getopts", "git", "gnuplot", "gpasswd", "grep", "groupadd", "groupdel", "groupmod", "gzip", "head",
+    "id", "install", "ip", "jobs", "join", "journalctl", "kill", "ldconfig", "ldd", "let", "ln", "locate",
+    "ls", "lsb_release", "m4", "make", "mapfile", "md5sum", "mkdir", "mkfifo", "mknod", "mktemp", "mv", "nice",
+    "nl", "nm", "nproc", "numfmt", "objdump", "od","pwdcd","passwd", "paste", "patch", "ping", "pr", "printenv",
+    "printf", "ptx", "read", "readelf", "readlink", "rm", "rmdir", "sed", "select", "seq", "shuf", "sleep",
+    "sort", "split", "sqlite3", "ss", "ssh", "stat", "stdbuf", "sync", "systemctl", "tac", "tail", "tar",
+    "tee", "test", "timeout", "top", "touch", "tr", "trap", "truncate", "tsort", "tty", "type", "umask",
+    "uname", "unexpand", "uniq", "updatedb", "uptime", "useradd", "userdel", "usermod", "vi", "wc", "wget", "whatis",
+    "which", "while", "who", "whoami", "xargs", "yes"
+];
+
+    const shellList = ["alias","array","autoload","bind","break","case","cd","command","continue","coproc","declare","do","done","elif","else","esac","exec","export","fi","float","for","function","getopts","hash","if","ifne","in","integer","let","local","read","readonly","return","select","set","shift","shopt","source","test","then","time","trap","true","typeset","ulimit","undef","unset","until","wait","while"
+];
+
+const commandPattern = new RegExp(`\\b(?:${commandList.join('|')})\\b`, 'g');
+
+const shellPattern = new RegExp(`\\b(?:${shellList.join('|')})\\b`, 'g');
+
+
+console.log(shellPattern);
+
+const specialCharacterList = [
+ '$', '%', '&', '#', '*', '+', '?', '=', '!', ':', '{', '}', '(', ')', '[', ']', '|','"',
+];
+
+const escapedSpecialCharacterList = specialCharacterList.map(char => char.replace(/([-.*+?^${}()|[\]\/\\])/g, "\\$1"));
+
+const specialCharacterPattern = new RegExp(`[${escapedSpecialCharacterList.join('')}]`, 'g');
+
+
+const specialCharacterList2 = [
+'-','.','^',
+];
+
+const escapedSpecialCharacterList2 = specialCharacterList2.map(char => char.replace(/([-.*+?^${}()|[\]\/\\])/g, "\\$1"));
+
+const specialCharacterPattern2 = new RegExp(`[${escapedSpecialCharacterList2.join('')}]`, 'g');
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const codeElements = document.querySelectorAll('code');
+
+    for (const codeElement of codeElements) {
+        const originalText = codeElement.innerHTML;
+
+        
+
+
+        console.log(originalText);
+
+        // 正規表現パターンを使用してテキストを変換
+
+        const convertedText = originalText
+            .replace(specialCharacterPattern, '<span style="color:#ff9841;">$&</span>')
+            .replace(specialCharacterPattern2, '<span style="color:#FFFF;">$&</span>')
+            .replace(commandPattern, '<span style="color:#4bb1a7;">$&</span>')
+            .replace(shellPattern, '<span style="color:#b888e2;">$&</span>')
+            ;
+
+
+        codeElement.innerHTML = convertedText;
+    }
+});
+
+  </script>
+
 </head>
 
 
@@ -86,6 +160,8 @@
   <div class="contents">
     <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">WordPressバージョンチェックをスクリプトを作成してみた!!</h2>
     <img src="../image/blog/shell_bash.jpg  " style="width: 100%;">
+
+    <p style="text-align: right;margin: 5px;">2023-8-14</p>
 
     <h3>■はじめに</h3>
     <p>お久しぶりです。r.portfolioの中の人「 r 」でございます。</p>
@@ -147,9 +223,125 @@ mysqlversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep 
 downloadlink=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"download":"[^"]+' | cut -d'"' -f4 | head -1)
 </code></pre>
 
+    <h4>| バージョン情報を格納するテキストファイルを作成する |</h4>
+    <p>次に比較用に情報を保持するためのテキストファイルを作成します。</p>
+    <p>今回、ファイル名は「setting-version.txt」として作成します。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">vi setting-version.txt</code></pre>
+    <p>初めの一回は手動で情報を入力する必要がある為、下記コマンドを使用して値を入力します。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"current":"[^"]+' | cut -d'"' -f4 | head -1 > setting-version.txt</code></pre>
+
     <h4>| スクリプトにて保持している現在のバージョン情報を変数に格納 |</h4>
+    <p>次に先ほどの手順にて作成したファイルより値を取り出し変数に格納します。</p>
+    <p>変数名は「settingversion」として作成致します。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+
+#現バージョンを読み込み変数に格納
+settingversion=$(cat setting-version.txt)</code></pre>
+
     <h4>| 新しいバージョンと現在のバージョンを比較 |</h4>
-    <h4>| 差分がある場合メール処理を行い通知 |</h4>
+    <p>次にバージョンの比較を行なっていきます。</p>
+    <p>if文を使用しサーバー側にて保持しているバージョンと新たに取得したバージョンの比較を行います。</p>
+    <p>ここでは自身が保持しているバージョンと新たに取得したバージョンが異なる場合更新ありと判定しております。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+
+if [ $newversion != $settingversion ]; then
+    #差分がある場合の処理
+elif [ $newversion == $settingversion ]; then
+    #差分がない場合の処理
+fi</code></pre>
+
+
+    <h4>| 差分処理の作成 |</h4>
+    <p>続いて差分処理の作成を行なっていきます。</p>
+    <p>差分がある場合は下記の処理を行います。</p>
+    <ol>
+      <li>メール通知</li>
+      <li>リストの更新</li>
+    </ol>
+    <p>差分がない場合は処理は不要です。より良い構成を取る場合等はログ出力等などの処理を作成しましょう。</p>
+    <p>下記が上記機能を組み込んだコードになります。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+
+if [ $newversion != $settingversion ]; then
+    #差分がある場合の処理
+
+    #メール通知処理
+    {
+     echo "To:<メールアドレス>"
+     echo "From: <メールアドレス>"
+     echo "Content-Type: text/plain;charset="UTF-8""
+     echo "Subject: [WordPressの公開バージョンが$newversionに変更されました]"
+     echo "動作要件"
+     echo "---------------------------------"
+     echo  "PHP $phpversion"
+     echo  "MySQL $mysqlversion"
+     echo "---------------------------------"
+     echo "下記よりダウンロード可能です。"
+     echo "$downloadlink"
+    } |sendmail -i メールアドレス
+
+    #リストの更新
+    echo $newversion > setting-version.txt
+
+elif [ $newversion == $settingversion ]; then
+    #差分がない場合の処理
+    #処理なし
+fi</code></pre>
+
+
+    <p>メール送信には「sendmail」を使用しています。上記「メールアドレス」を置き換える事で使用する事が可能です。</p>
+
+    <h3>■プログラム全容</h3>
+    <p>最終的なプログラムは以下となっております。</p>
+    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+
+#APIからCMSバージョンを取得し変数に格納
+newversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"current":"[^"]+' | cut -d'"' -f4 | head -1)
+
+#APIからPHPバージョンを取得し変数に格納
+phpversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"php_version":"[^"]+' | cut -d'"' -f4 | head -1)
+
+##APIからmysqlバージョンを取得し変数に格納
+mysqlversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"mysql_version":"[^"]+' | cut -d'"' -f4 | head -1)
+
+#APIからダウンロードリンクを取得し変数に格納
+downloadlink=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"download":"[^"]+' | cut -d'"' -f4 | head -1)
+
+#現バージョンを読み込み変数に格納
+settingversion=$(cat setting-version.txt)
+
+#差分確認
+#差分がある場合→メール配送＆リスト更新
+
+if [ $newversion != $settingversion ]; then
+    #差分あり
+
+    #メール通知処理
+    {
+     echo "To:<メールアドレス>"
+     echo "From: <メールアドレス>"
+     echo "Content-Type: text/plain;charset="UTF-8""
+     echo "Subject: [WordPressの公開バージョンが$newversionに変更されました]"
+     echo "動作要件"
+     echo "---------------------------------"
+     echo  "PHP $phpversion"
+     echo  "MySQL $mysqlversion"
+     echo "---------------------------------"
+     echo "下記よりダウンロード可能です。"
+     echo "$downloadlink"
+    } |sendmail -i メールアドレス
+
+    #リスト更新
+    echo $newversion > setting-version.txt
+
+elif [ $newversion == $settingversion ]; then
+    #差分がない場合の処理
+    #処理なし
+fi
+</code></pre>
+
+
+
 
     <p style="text-align: center;"><a href="../blog.html" style="color:#333;">戻る</a></p>
 
