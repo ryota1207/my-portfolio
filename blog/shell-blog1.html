@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const convertedText = originalText
             .replace(specialCharacterPattern, '<span style="color:#ff9841;">$&</span>')
             .replace(specialCharacterPattern2, '<span style="color:#FFFF;">$&</span>')
-            .replace(commandPattern, '<span style="color:#4bb1a7;">$&</span>')
+            .replace(commandPattern, '<span style="color:#90c53f;">$&</span>')
             .replace(shellPattern, '<span style="color:#b888e2;">$&</span>')
             ;
 
@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <li>差分がある場合、メール処理を行い通知</li>
     </ol>
 
-     <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">ディレクトリ
+     <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">ディレクトリ
 │
 ├ チェックスクリプト
 └─バージョン格納用テキストファイル</code></pre>
@@ -211,7 +211,7 @@ newversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -o
 </code></pre>
 
     <p>上記同様に「PHPバージョン」「mysqlバージョン」「ダウンロードリンク」をAPIより取得し変数に格納します。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
 
 #APIからPHPバージョンを取得し変数に格納
 phpversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"php_version":"[^"]+' | cut -d'"' -f4 | head -1)
@@ -233,7 +233,7 @@ downloadlink=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep 
     <h4>| スクリプトにて保持している現在のバージョン情報を変数に格納 |</h4>
     <p>次に先ほどの手順にて作成したファイルより値を取り出し変数に格納します。</p>
     <p>変数名は「settingversion」として作成致します。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
 
 #現バージョンを読み込み変数に格納
 settingversion=$(cat setting-version.txt)</code></pre>
@@ -242,7 +242,7 @@ settingversion=$(cat setting-version.txt)</code></pre>
     <p>次にバージョンの比較を行なっていきます。</p>
     <p>if文を使用しサーバー側にて保持しているバージョンと新たに取得したバージョンの比較を行います。</p>
     <p>ここでは自身が保持しているバージョンと新たに取得したバージョンが異なる場合更新ありと判定しております。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
 
 if [ $newversion != $settingversion ]; then
     #差分がある場合の処理
@@ -289,11 +289,11 @@ elif [ $newversion == $settingversion ]; then
 fi</code></pre>
 
 
-    <p>メール送信には「sendmail」を使用しています。上記「メールアドレス」を置き換える事で使用する事が可能です。</p>
+    <p style="margin-bottom: 40px;">メール送信には「sendmail」を使用しています。上記「メールアドレス」を置き換える事で使用する事が可能です。</p>
 
     <h3>■プログラム全容</h3>
     <p>最終的なプログラムは以下となっております。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
 
 #APIからCMSバージョンを取得し変数に格納
 newversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"current":"[^"]+' | cut -d'"' -f4 | head -1)
@@ -341,6 +341,11 @@ fi
 </code></pre>
 
 
+    <h3>■まとめ</h3>
+    <p>いかがでしたでしょうか。</p>
+    <p>以上で「WordPressバージョンチェックをスクリプト」の完成となります!!</p>
+    <p>通知メールの宛先指定を「Slack」や「Teams」の外部サービス等にする事でより便利に活用できるかと思います!</p>
+    <p>最後まで見ていただき誠にありがとうございました!!</p>
 
 
     <p style="text-align: center;"><a href="../blog.html" style="color:#333;">戻る</a></p>
