@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- メタ -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- ページ設定 -->
+  <title>portfolio</title>
+  <meta name="description" content="デザインとエンジニアリングの融合を追求する私のポートフォリオサイトです。" />
+
+  <!-- ファビコン -->
+  <link rel="icon" href="../image/favicon/favicon.ico">
+  <link rel="icon" type="image/png" href="../image/favicon/favicon.png">
+
+  <!-- 外部ファイルの読み込み -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76RM8LHR7D"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-76RM8LHR7D');
+  </script>
+
+  <style>
+    body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
+    /* ナビゲーション */
+    .header {position: fixed;width: 100%;height: 52px;padding: 0;margin: 0;background-color: #FFFFFF;}
+    .menu {list-style: none;position: absolute;width: 100%;height: 100vh;top: 0;margin-top: 52px;padding: 0 0 10px 0;clear: both;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;transform: scale(1, 0);transform-origin: top;background-color: #FFFFFF;user-select: none;border-left: 2px solid #333;margin-left: 36px;}
+    .menu-btn:checked ~ .menu {transform: scale(1, 1);transform-origin: top;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .menu a {text-decoration: none;font-weight: 500;letter-spacing: 2px;font-size: 16px;text-transform: capitalize;color: #333;opacity: 0;transition: 0.5s;}
+    .menu li {padding: 15px 0;margin: 0 54px;opacity: 0;transition: 0.5s;}
+    .menu-btn:checked ~ .menu a,.menu-btn:checked ~ .menu li {opacity: 1;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;}
+    .menu-btn {display: none;}
+    .menu-icon {display: inline-block;position: relative;cursor: pointer;padding: 24px 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);float: right;}
+    .navicon {background: #333;display: block;height: 3px;width: 26px;position: relative;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before,.navicon:after {content: "";display: block;height: 100%;width: 100%;position: absolute;background: #333;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before {top: 9px;}
+    .navicon:after {bottom: 9px;}
+    .menu-btn:checked ~ .menu-icon .navicon:before {transform: rotate(-45deg);}
+    .menu-btn:checked ~ .menu-icon .navicon:after {transform: rotate(45deg);}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {top: 0;}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {bottom: 0;}
+    .menu-btn:checked ~ .menu-icon .navicon {background: rgba(0, 0, 0, 0);transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navtext-container {width: 100%;height: 52px;position: absolute;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+    .navtext {position: absolute;color: #333;letter-spacing: 4px;font-size: 20px;padding: 24px 14px;color: #333;text-decoration: none;}
+    /* アイコン */
+    .icon {opacity: 0;position: fixed;transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2008s;}
+    .menu-btn:checked ~ .icon {opacity: 1;}
+
+     .contents{padding-top: 52px;margin: auto;width: 80vw;height: 100%;}
+
+.list-ul{padding: 0;}
+.list{list-style: none;}
+
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <a href="../index.html"><div class="navtext" style="user-select: none;">r.portfolio</div></a>
+    <ul class="menu">
+      <li class="top"><a href="../index.html">home</a></li>
+      <li><a href="../skills.html">skills</a></li>
+      <li><a href="../portfolio.html">portfolio</a></li>
+      <li><a href="../blog.html">blog</a></li>
+      <li><a href="../contact.html">contact</a></li>
+      <a href="https://github.com/ryota1207" target="_blank" class="icon" style="bottom: 80px;right: 70px;"><img src="../image/icon/github-mark.svg" width="35" height="35" alt=""></a>
+      <a href="https://twitter.com/ryota__1207" target="_blank" class="icon" style="bottom: 80px;right: 130px;"><img src="../image/icon/twitter.svg" width="35" height="35" alt=""></a>
+    </ul>
+
+
+  </header>
+  <div class="contents">
+    <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">性格相性診断サイト</h2>
+    <img src="../image/portfolio/design-portfolio2-1.png" style="width: 100%;">
+
+    <h3>■デザイン</h3>
+
+    <h4>| コンセプト |</h4>
+    <p>今風の宇宙空間をイメージしたデザインとなっております。</p>
+    <p>スマートフォン特化のデザインを行い直感的な操作が可能なアプリケーションを実現しました。</p>
+    
+    <h4>| カラー |</h4>
+    <p>メインカラー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #010000;">■&nbsp;#010000</span></p>
+    <p>サブカラー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #F9FAFA;background-color: #010000;">■&nbsp;#F9FAFA</span></p>
+    <p style="margin-bottom: 50px;">アクセントカラー&nbsp;&nbsp;&nbsp;<span style="color: #F5D27E;">■&nbsp;#F5D27E</span></p>
+
+    <h3>■構成</h3>
+    <h4>| ドメイン |</h4>
+    <p>ドメイン&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://sindan.web-next.cloud/" target="_blank">sindan.web-next.cloud</a></p>
+    
+    <h4>| SSL証明書 |</h4>
+    <p style="margin-bottom: 50px;">Let's Encrypt&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://letsencrypt.org/ja/" target="_blank">https://letsencrypt.org/ja/</a></p>
+
+    <h3>■特徴</h3>
+    <h4>| バックエンドレスアプリケーション |</h4>
+    <img src="../image/portfolio/design-portfolio2-2.png" style="width: 100%;">
+    <p>本アプリケーションはPHPやデータベース等のバックエンド技術を使用せず構成されております。</p>
+    <p>処理は、入力されたパラメーターをクエリパラメーターとしてJavaScriptにて処理を行い相性測定を行なっております。</p>
+    <p>また、バックエンドレス構成により様々な環境で動作すると共にサーバーへの負荷を軽減し高速な処理動作を実現しております。</p>
+
+    <h4>| LINE連携機能 |</h4>
+    <img src="../image/portfolio/design-portfolio2-3.png" style="width: 100%;">
+    <p>本アプリケーションはLINE連携機能を搭載しております。</p>
+    <p>通常のLINE共有機能では静的URL指定しか出来ない為、「LINE URLスキーム」機能を使用し
+    結果に応じたクエリパラメーターを含む動的に実装いたしました。</p>
+
+    <h4>| 動的グラフ描写 |</h4>
+    <p>本アプリケーションは診断結果を直感的に読み取れるようレーダーチャートにて表示を行なっております。</p>
+    <p>レーダーチャートは「chart.js」ライブラリを使用し結果に応じて動的に描写しております。</p>
+
+    <h3>■その他</h3>
+
+    <h4>| サイト用ロゴ制作 |</h4>
+    <img src="../image/portfolio/design-portfolio2-4.jpg" style="width: 100%; max-width: 500px;">
+    <p style="margin-bottom: 50px;">メインカラーの「<span style="color: ■ #010000;">■ #010000</span>」をベースに惑星をイメージしたシンプルなロゴデザインになっております。</p>
+
+    <p style="text-align: center;"><a href="../portfolio.html" style="color:#333;">戻る</a></p>
+
+  </div>
+
+
+
+</body>
+</html>

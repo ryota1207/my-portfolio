@@ -159,97 +159,34 @@ document.addEventListener("DOMContentLoaded", function() {
   </header>
   <div class="contents">
     <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">Linuxで独自コマンドを作成する方法</h2>
-    <img src="../image/blog/shell_bash.jpg  " style="width: 100%;">
+    <img src="../image/blog/linux.jpg" style="width: 100%;">
 
     <p style="text-align: right;margin: 5px;">2023-8-14</p>
 
     <h3>■はじめに</h3>
     <p>お久しぶりです。r.portfolioの中の人「 r 」でございます。</p>
-    <p>世の中には様々なCMSが存在しますが、最も有名なCMSは「WordPress」ではないでしょうか？</p>
-    <p>私はサーバーエンジニアの業務の一環として、お客様のWeb環境を頻繁に目にしています。</p>
-    <p>その中の体感として、約8割強のお客様が「WordPress」を利用しWeb構築を行なっているように感じます。</p>
-    <p>「WordPress」はOSSとして開発、公開が行われており様々なバージョンが存在します。</p>
-    <p>最新の公開バージョン取得したいと模索していたところ公式より公開されている便利なAPIを見つけました!!</p>
-    <p style="margin-bottom: 40px;">今回は上記APIを活用し簡易的にバージョンチェックスクリプトを作成する方法を解説致します!!</p>
+    <p>サーバーエンジニアにとってLinuxはとても身近なOSです。</p>
+    <p>Linuxなどでスクリプトを作成し利用している方も多いのではないでしょうか...？</p>
+    <p style="margin-bottom: 40px;">そこで今回は作成したバッシュクリプトをコマンドとして利用できるようにする方法を解説致します!!</p>
 
-    <h3>■使用するAPI</h3>
-    <p>今回使用するAPIは公式より公開されている「WordPress.org API」を使用致します。</p>
-    <p>「WordPress.org API」の中の「Version Check」APIを使用し最新バージョンを取得します。</p>
-    <p>その他にも「PHPバージョン」や「mysqlバージョン」「ダウンロードリンク」等もあわせて取得しプログラムに埋め込みます。</p>
-    <ul>
-      <li>最新バージョン</li>
-      <li>PHPバージョン</li>
-      <li>mysqlバージョン</li>
-      <li>ダウンロードリンク</li>
-    </ul>
-    <p>その他のAPI詳細については下記サイトよりご確認よろしくお願いいたします。</p>
-    <a href="https://codex.wordpress.org/WordPress.org_API" style="color:#333;" target=”_blank”><p style="margin-bottom: 40px;">&ltAPI公式サイト&gt</a></p>
+    <h3>■コマンドのスクリプトを作成する</h3>
+    <p>はじめにコマンドとして使用したいスクリプトの作成を行います。</p>
+    <p>今回はバッシュスクリプトで作成致しますがPythonやPHP等のその他の言語でも作成可能となっております。</p>
+    <p>例として下記の文字列の出力スクリプトを作成し使用する事にします。</p>
+     <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
+echo "Hello World!"</code></pre>
 
-    <h3>■シェルの構成</h3>
-    <h4>| 概要 |</h4>
-    <p>今回作成するシェルの流れは以下のようになっております。</p>
-    <ol>
-      <li>APIから情報を取得し、変数に格納</li>
-      <li>スクリプトにて保持している現在のバージョン情報を変数に格納</li>
-      <li>if条件文を使って、新しいバージョンと現在のバージョンを比較</li>
-      <li>差分がある場合、メール処理を行い通知</li>
+    <h3>■設定方法を選択する</h3>
+    <p>次にコマンド設定方法の選択を行います。</p>
+    <p>Linuxにて独自コマンドを作成するには主に下記2つの方法がございます。</p>
+    <ol style="margin-bottom: 40px;">
+      <li>ユーザー単位で設定する方法</li>
+      <li>サーバー単位で設定する方法<br>※管理者権限が必要</li>
     </ol>
 
-     <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">ディレクトリ
-│
-├ チェックスクリプト
-└─バージョン格納用テキストファイル</code></pre>
+    <h3>■ユーザー単位で設定する方法</h3>
 
-    <h4>| APIから情報を取得し変数に格納 |</h4>
-    <p>APIからの情報取得はcurlを使用します。またhttpsを使用する為、「-s」オプションを使用します。</p>
-    <p>下記のコードにて取得したAPIバージョンをnewversionとして変数に格納します。</p>
-    <p>curlではAPIのすべての情報を取得してしまう為、grepやcut、head等を使用し必要な情報のみを抽出します。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
-
-#APIからCMSバージョンを取得し変数に格納
-newversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"current":"[^"]+' | cut -d'"' -f4 | head -1)
-</code></pre>
-
-    <p>上記同様に「PHPバージョン」「mysqlバージョン」「ダウンロードリンク」をAPIより取得し変数に格納します。</p>
-    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
-
-#APIからPHPバージョンを取得し変数に格納
-phpversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"php_version":"[^"]+' | cut -d'"' -f4 | head -1)
-
-##APIからmysqlバージョンを取得し変数に格納
-mysqlversion=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"mysql_version":"[^"]+' | cut -d'"' -f4 | head -1)
-
-#APIからダウンロードリンクを取得し変数に格納
-downloadlink=$(curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"download":"[^"]+' | cut -d'"' -f4 | head -1)
-</code></pre>
-
-    <h4>| バージョン情報を格納するテキストファイルを作成する |</h4>
-    <p>次に比較用に情報を保持するためのテキストファイルを作成します。</p>
-    <p>今回、ファイル名は「setting-version.txt」として作成します。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">vi setting-version.txt</code></pre>
-    <p>初めの一回は手動で情報を入力する必要がある為、下記コマンドを使用して値を入力します。</p>
-    <pre style="background-color: #333; margin-bottom: 30px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">curl -s https://api.wordpress.org/core/version-check/1.7/ | grep -oE '"current":"[^"]+' | cut -d'"' -f4 | head -1 > setting-version.txt</code></pre>
-
-    <h4>| スクリプトにて保持している現在のバージョン情報を変数に格納 |</h4>
-    <p>次に先ほどの手順にて作成したファイルより値を取り出し変数に格納します。</p>
-    <p>変数名は「settingversion」として作成致します。</p>
-    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
-
-#現バージョンを読み込み変数に格納
-settingversion=$(cat setting-version.txt)</code></pre>
-
-    <h4>| 新しいバージョンと現在のバージョンを比較 |</h4>
-    <p>次にバージョンの比較を行なっていきます。</p>
-    <p>if文を使用しサーバー側にて保持しているバージョンと新たに取得したバージョンの比較を行います。</p>
-    <p>ここでは自身が保持しているバージョンと新たに取得したバージョンが異なる場合更新ありと判定しております。</p>
-    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">#!/bin/bash
-
-if [ $newversion != $settingversion ]; then
-    #差分がある場合の処理
-elif [ $newversion == $settingversion ]; then
-    #差分がない場合の処理
-fi</code></pre>
-
+    <h3>■サーバー単位で設定する方法</h3>
 
     <h4>| 差分処理の作成 |</h4>
     <p>続いて差分処理の作成を行なっていきます。</p>
