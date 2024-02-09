@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- メタ -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+  <!-- ページ設定 -->
+  <title>portfolio</title>
+  <meta name="description" content="デザインとエンジニアリングの融合を追求する私のポートフォリオサイトです。" />
+
+  <!-- ファビコン -->
+  <link rel="icon" href="../image/favicon/favicon.ico">
+  <link rel="icon" type="image/png" href="../image/favicon/favicon.png">
+
+  <!-- 外部ファイルの読み込み -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-76RM8LHR7D"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-76RM8LHR7D');
+  </script>
+
+  <style>
+    body {margin: 0;padding: 0;font-family: "Futura", Helvetica, sans-serif;}
+    /* ナビゲーション */
+    .header {position: fixed;width: 100%;height: 52px;padding: 0;margin: 0;background-color: #FFFFFF;}
+    .menu {list-style: none;position: absolute;width: 100%;height: 100vh;top: 0;margin-top: 52px;padding: 0 0 10px 0;clear: both;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;transform: scale(1, 0);transform-origin: top;background-color: #FFFFFF;user-select: none;border-left: 2px solid #333;margin-left: 36px;}
+    .menu-btn:checked ~ .menu {transform: scale(1, 1);transform-origin: top;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .menu a {text-decoration: none;font-weight: 500;letter-spacing: 2px;font-size: 16px;text-transform: capitalize;color: #333;opacity: 0;transition: 0.5s;}
+    .menu li {padding: 15px 0;margin: 0 54px;opacity: 0;transition: 0.5s;}
+    .menu-btn:checked ~ .menu a,.menu-btn:checked ~ .menu li {opacity: 1;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;}
+    .menu-btn {display: none;}
+    .menu-icon {display: inline-block;position: relative;cursor: pointer;padding: 24px 14px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);float: right;}
+    .navicon {background: #333;display: block;height: 3px;width: 26px;position: relative;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before,.navicon:after {content: "";display: block;height: 100%;width: 100%;position: absolute;background: #333;transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navicon:before {top: 9px;}
+    .navicon:after {bottom: 9px;}
+    .menu-btn:checked ~ .menu-icon .navicon:before {transform: rotate(-45deg);}
+    .menu-btn:checked ~ .menu-icon .navicon:after {transform: rotate(45deg);}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {top: 0;}
+    .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {bottom: 0;}
+    .menu-btn:checked ~ .menu-icon .navicon {background: rgba(0, 0, 0, 0);transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;}
+    .navtext-container {width: 100%;height: 52px;position: absolute;box-sizing: border-box;display: flex;justify-content: center;align-items: center;}
+    .navtext {position: absolute;color: #333;letter-spacing: 4px;font-size: 20px;padding: 24px 14px;color: #333;text-decoration: none;}
+    /* アイコン */
+    .icon {opacity: 0;position: fixed;transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2008s;}
+    .menu-btn:checked ~ .icon {opacity: 1;}
+
+     .contents{padding-top: 52px;margin: auto;width: 80vw;height: 100%;}
+
+.list-ul{padding: 0;}
+.list{list-style: none;}
+
+  </style>
+</head>
+
+
+<body>
+  <header class="header">
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+    <a href="../index.html"><div class="navtext" style="user-select: none;">r.portfolio</div></a>
+    <ul class="menu">
+      <li class="top"><a href="../index.html">home</a></li>
+      <li><a href="../skills.html">skills</a></li>
+      <li><a href="../portfolio.html">portfolio</a></li>
+      <li><a href="../blog.html">blog</a></li>
+      <li><a href="../contact.html">contact</a></li>
+      <a href="https://github.com/ryota1207" target="_blank" class="icon" style="bottom: 80px;right: 70px;"><img src="../image/icon/github-mark.svg" width="35" height="35" alt=""></a>
+      <a href="https://twitter.com/ryota__1207" target="_blank" class="icon" style="bottom: 80px;right: 130px;"><img src="../image/icon/twitter.svg" width="35" height="35" alt=""></a>
+    </ul>
+
+
+  </header>
+  <div class="contents">
+    <h2 style="text-align: center; margin-top: 60px;margin-bottom: 40px;">夜這い月公式サイト</h2>
+    <img src="../image/portfolio/design-portfolio3-1.png" style="width: 100%;">
+
+    <h3>■デザイン</h3>
+
+    <h4>| コンセプト |</h4>
+    <p>和テイスト&エモーショナルなデザイン</p>
+    <p>トップページにはJavaScriptを使用し背景スライドを実装しました。</p>
+    
+    <h4>| カラー |</h4>
+    <p>メインカラー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8da8e3ff;">■&nbsp;#8da8e3ff</span></p>
+    <p style="margin-bottom: 50px;">サブカラー&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #272b4c;">■&nbsp;#272b4c</span></p>
+
+    <h3>■構成</h3>
+    <h4>| ドメイン |</h4>
+    <p>ドメイン&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://yobaituki.com/" target="_blank">yobaituki.com</a></p>
+    
+    <h4>| SSL証明書 |</h4>
+    <p>Let's Encrypt&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://letsencrypt.org/ja/" target="_blank">https://letsencrypt.org/ja/</a></p>
+
+    <h4>| その他 |</h4>
+    <p style="margin-bottom: 50px;">独自HTTP監視&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" target="_blank">https://letsencrypt.org/ja/</a></p>
+    <p style="margin-bottom: 50px;">独自バックアップ機能&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" target="_blank">https://letsencrypt.org/ja/</a></p>
+
+    <h3>■特徴</h3>
+    <h4>| 高パフォーマンス |</h4>
+    <img src="../image/portfolio/design-portfolio3-2.png" style="width: 100%;">
+    <p>夜這い月公式サイトは速度を重視したWebサイトとなっております。</p>
+    <p>公開サーバーは低スペックな環境ですがPageSpeed Insightsでの速度検証ではパソコン環境が0.3秒、モバイル環境が1秒となりました。</p>
+    <p>.htaccessでは「mod_expires」を使用しキャッシュ期間を設定、「mod_deflate」を使用して圧縮配信を行う事で速度を早めております。</p>
+
+    <pre style="background-color: #333; margin-bottom: 40px; padding: 20px; overflow-x: auto;border-radius: 5px;"><code style="color: #FFFFFF;">
+      &lt;IfModule mod_expires.c&gt;
+        ExpiresActive On
+        &lt;FilesMatch &quot;\.(js|xml|css|gif|jpe?g|png|ico|mov|pdf|mpg|woff2|webp)$&quot;&gt;
+          ExpiresDefault &quot;access plus 1 week&quot;
+        &lt;/FilesMatch&gt;
+      &lt;/IfModule&gt;
+      
+      &lt;IfModule mod_deflate.c&gt;
+        AddOutputFilterByType DEFLATE image/svg+xml
+        AddOutputFilterByType DEFLATE text/plain
+        AddOutputFilterByType DEFLATE text/html
+        AddOutputFilterByType DEFLATE text/xml
+        AddOutputFilterByType DEFLATE text/css
+        AddOutputFilterByType DEFLATE text/javascript
+        AddOutputFilterByType DEFLATE application/xml
+        AddOutputFilterByType DEFLATE application/xhtml+xml
+        AddOutputFilterByType DEFLATE application/rss+xml
+        AddOutputFilterByType DEFLATE application/atom_xml
+        AddOutputFilterByType DEFLATE application/javascript
+        AddOutputFilterByType DEFLATE application/x-javascript
+        AddOutputFilterByType DEFLATE application/x-httpd-php
+        AddOutputFilterByType DEFLATE application/x-font-ttf
+        AddOutputFilterByType DEFLATE application/x-font-woff
+        AddOutputFilterByType DEFLATE application/x-font-opentype
+        AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+      &lt;/IfModule&gt;      
+    </code></pre>
+      
+    <p>上記に加え画像形式を「PNG」から次世代画像フォーマット「WEBP」に変更する事で読み込みデータの削減を行なっております。</p>
+    <p>その他にもフォントファイル読み込み時に「font-display: swap;」を指定する事でwebページの表示を優先させた設計となっております。</p>
+
+    <h4>| 高い検索順位 |</h4>
+    <img src="../image/portfolio/design-portfolio3-3.png" style="width: 100%;">
+    <p>大手検索エンジンである「Google」「Yahoo」にて共に1検索順位が1位となっております。</p>
+
+    <h4>| 自動スクロール機能 |</h4>
+    <img src="../image/portfolio/design-portfolio3-4.gif" style="width: 100%;" loading="lazy">
+    <p>ギターコード表示用にJavaScriptを使用し自動スクロール機能を実装しております。</p>
+    <p>自動スクロールはレンジスライダーにて速度が調整可能となっております。</p>
+    <p style="font-size: 12px;">※掲載画像は開発段階のスクリーンショットです。</p>
+
+    <h3>■その他</h3>
+    <h4 style="margin-bottom: 50px;">| 準備中 |</h4>
+
+    <p style="text-align: center;"><a href="../portfolio.html" style="color:#333;">戻る</a></p>
+
+  </div>
+
+
+
+</body>
+</html>
